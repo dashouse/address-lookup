@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address lookup – Single postcode input step 1
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "single-postcode-input-step-1"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">What is your home address?</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-2">Postcode</p>
+
+    <p class="govuk-body-l govuk-!-font-weight-bold">TW18 4HT <span class="govuk-body govuk-!-font-weight-regular govuk-!-margin-left-2"><a href="single-postcode-input-step-1">Change</a></span></p>
+
+    <form action="/index" method="post" novalidate>
+      {{ govukSelect({
+        id: "select-address",
+        name: "select-address",
+        label: {
+          text: "Select your address"
+        },
+        items: [
+          {
+            value: "1 Heatherley Road",
+            text: "1 Heatherley Road"
+          },
+          {
+            value: "2 Heatherley Road",
+            text: "2 Heatherley Road"
+          },
+          {
+            value: "3 Heatherley Road",
+            text: "3 Heatherley Road"
+          },
+          {
+            value: "4 Heatherley Road",
+            text: "4 Heatherley Road"
+          },
+          {
+            value: "5 Heatherley Road",
+            text: "5 Heatherley Road"
+          },
+          {
+            value: "6 Heatherley Road",
+            text: "6 Heatherley Road"
+          },
+          {
+            value: "7 Heatherley Road",
+            text: "7 Heatherley Road"
+          },
+          {
+            value: "8 Heatherley Road",
+            text: "8 Heatherley Road"
+          },
+          {
+            value: "9 Heatherley Road",
+            text: "9 Heatherley Road"
+          },
+          {
+            value: "10 Heatherley Road",
+            text: "10 Heatherley Road"
+          },
+          {
+            value: "11 Heatherley Road",
+            text: "11 Heatherley Road"
+          },
+          {
+            value: "12 Heatherley Road",
+            text: "12 Heatherley Road"
+          },
+          {
+            value: "13 Heatherley Road",
+            text: "13 Heatherley Road"
+          },
+          {
+            value: "14 Heatherley Road",
+            text: "14 Heatherley Road"
+          },
+          {
+            value: "15 Heatherley Road",
+            text: "15 Heatherley Road"
+          },
+          {
+            value: "16 Heatherley Road",
+            text: "16 Heatherley Road"
+          },
+          {
+            value: "17 Heatherley Road",
+            text: "17 Heatherley Road"
+          },
+          {
+            value: "18 Heatherley Road",
+            text: "18 Heatherley Road"
+          },
+          {
+            value: "19 Heatherley Road",
+            text: "19 Heatherley Road"
+          },
+          {
+            value: "20 Heatherley Road",
+            text: "20 Heatherley Road"
+          },
+          {
+            value: "21 Heatherley Road",
+            text: "21 Heatherley Road"
+          },
+          {
+            value: "22 Heatherley Road",
+            text: "22 Heatherley Road"
+          },
+          {
+            value: "23 Heatherley Road",
+            text: "23 Heatherley Road"
+          },
+          {
+            value: "24 Heatherley Road",
+            text: "24 Heatherley Road"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <p class="govuk-body>"><a href="/single-postcode-input-step-3" class="govuk-link">I can’t find my address on the list</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

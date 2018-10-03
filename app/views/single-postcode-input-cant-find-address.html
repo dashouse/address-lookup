@@ -1,0 +1,31 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address lookup – Single postcode input step 3
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "single-postcode-input-step-1"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">We can’t find your postcode</h1>
+
+    <p class="govuk-body">It looks like we don’t have the postcode <span class="govuk-!-font-weight-bold">{{ data['postcode'] }}</span> on our system. This can happen with new build properties or postcodes that are not currently on the Royal Mail database.</p>
+
+    <p class="govuk-body">If you have entered your postcode <span class="govuk-!-font-weight-bold">{{ data['postcode'] }}</span> incorrectly you can <a href="single-postcode-input-step-1" class="govuk-link">enter your postcode again</a> otherwise, <a href="single-postcode-input-step-3" class="govuk-link">enter your address manually</a>.</p>
+
+  </div>
+</div>
+
+{% endblock %}
