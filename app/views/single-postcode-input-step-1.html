@@ -50,64 +50,12 @@
 
         <form action="/index" method="post" novalidate>
 
-        {% call govukFieldset({
-          legend: {
-            text: "What is your international home address?",
-            classes: "govuk-fieldset__legend--m",
-            isPageHeading: false
-          }
-        }) %}
-
-          {{ govukInput({
+          {{ govukTextarea({
+            name: "address",
+            id: "address",
             label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
-            },
-            id: "address-line-1",
-            name: "address-line-1"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-            },
-            id: "address-line-2",
-            name: "address-line-2"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Town or city"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "address-town"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "County or Province"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-county",
-            name: "address-county"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Postcode or Zip code"
-            },
-            classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "address-postcode"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Country"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-country",
-            name: "address-country"
+              text: "What is your international address?"
+            }
           }) }}
 
           {{ govukButton({
@@ -115,7 +63,7 @@
             classes: "govuk-!-margin-bottom-1"
           }) }}
 
-        {% endcall %}
+
         </form>
 
       </div>
