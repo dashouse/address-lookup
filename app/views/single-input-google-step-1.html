@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address lookup – Single postcode input google - step 1
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">What is your home address?</h1>
+
+    <form action="/single-input-step-2" method="post" novalidate>
+
+      <label class="govuk-label" for="national-insurance-number">
+        Enter your address
+      </label>
+      <span id="address-hint" class="govuk-hint">
+        Start typing your address and select it from a the list
+      </span>
+
+      <input id="autocomplete" placeholder="Enter your address"
+                   onFocus="geolocate()" type="text"></input>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+    <p class="govuk-body"><a href="single-input-step-3" class="govuk-link">I can’t find my address</a></p>
+
+  </div>
+</div>
+
+{% endblock %}
