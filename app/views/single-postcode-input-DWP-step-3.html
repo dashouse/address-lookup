@@ -1,0 +1,117 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address lookup – Single postcode input step 1
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/single-postcode-input-DWP-step-2"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Confirm your address</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-3">Address</p>
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body-l govuk-!-font-weight-bold">
+        23 Heatherley Road<br>
+        Camberley<br>
+        Surrey<br>
+        GU15 3LX<br>
+      </p>
+    </div>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I need to manually edit this address
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        <form action="/index" method="post" novalidate>
+
+
+          {% call govukFieldset({
+            legend: {
+              text: "Manually edit your address",
+              classes: "govuk-visually-hidden"
+            }
+          }) %}
+
+            {{ govukInput({
+              label: {
+                html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+              },
+              id: "address-line-1",
+              name: "address-line-1",
+              value: "23 Heatherley Road"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+              },
+              id: "address-line-2",
+              name: "address-line-2"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Town or city"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "address-town",
+              name: "address-town",
+              value: "Camberley"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "County"
+              },
+              classes: "govuk-!-width-two-thirds",
+              id: "address-county",
+              name: "address-county",
+              value: "Surrey"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Postcode"
+              },
+              classes: "govuk-input--width-10",
+              id: "address-postcode",
+              name: "address-postcode",
+              value: "GU15 3LX"
+            }) }}
+
+          {% endcall %}
+
+        </form>
+
+      </div>
+    </details>
+
+    <form action="/index" method="post" novalidate>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}
